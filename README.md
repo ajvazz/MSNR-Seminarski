@@ -1,1 +1,1 @@
-# Metodologije stručnog i naučnog rada
+# Metodologija stručnog i naučnog rada
