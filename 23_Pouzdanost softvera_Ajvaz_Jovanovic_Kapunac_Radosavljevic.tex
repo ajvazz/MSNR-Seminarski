@@ -145,16 +145,14 @@ Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali
   $E$ & broj grešaka i bagova & $ V / 3000 $ \\
   \hline
  \end{tabular}
- \caption{Obeležja u Holstedovoj metrici. Brojevi su dobijeni empirijski. \cite{ibm_halstead}}
+ \caption{Obeležja u Holstedovoj metrici. Brojevi su dobijeni empirijski \cite{ibm_halstead}}
  \label{tabela:1} 
 \end{table}
-
-- TODO:  ubaciti primer iz knjige? 
 
 \subsubsection{Mek-Kejbova ciklomatična složenost}
 \label{subsec:mekkejb}
 
-Ova metrika računa složenost dijagrama koji se pravi na osnovu grafa kontrole toka podataka programa. Čvorovi grafa predstavljaju različite komande, a oni su povezani usmerenom granom ako je sledeća naredba prvog čvora ona naredba u drugom čvoru. \\
+Ova metrika računa složenost dijagrama koji se pravi na osnovu grafa kontrole toka podataka. Čvorovi grafa predstavljaju različite komande, a oni su povezani usmerenom granom ako je sledeća naredba prvog čvora naredba u drugom čvoru. \\
 U slučaju da je graf povezan, ciklomatični broj jednak je broju linearno nezavisnih putanja kroz graf. Jednostavnije rečeno, ako program ne sadrži uslove i grananja, taj broj je 1. Zatim bi se taj broj povećao za 1 svaki put kada se naiđe na neku od ključnih reči: if, while, for, repeat, and, or itd. U naredbi case bi se svaki slučaj posebno računao. Mek-Kejb je za Fortran okruženje odredio da je gornja granica za ciklomatični broj 10, i program se u tom slučaju može smatrati visokog kvaliteta.\\
 Ovom metrikom se mogu meriti i manje celine izvornog koda, kao što su pojedinačne funkcije, klase, moduli i potprogrami.\\
 Ciklomatični broj C(G) grafa G se računa po formuli:
@@ -166,13 +164,12 @@ E = broj grana grafa\\
 V = broj čvorova grafa\\
 P = broj povezanih komponenti grafa\\
 
-Ciklomatični broj grafa sa više od jedne povezane komponente se računa kao suma ciklomatičnih brojeva svakih od povezanih komponenti. Kada se merenje vrši nad funkcijom,  P će biti 1, jer funkcija predstavlja jedinstvenu povezanu komponentu.\\
-- TODO:  ubaciti primer iz knjige? 
+Ciklomatični broj grafa sa više od jedne povezane komponente se računa kao suma ciklomatičnih brojeva svakih od povezanih komponenti. Kada se merenje vrši nad funkcijom,  P će biti 1, jer funkcija predstavlja jedinstvenu povezanu komponentu.
 
 \subsection{Probabilistički modeli}
 \label{sec:probabilisticki}
 
-Ovaj model pojavu grešaka i kvarova gleda kao na verovatnosne događaje. Softver se posmatra u fazi izvršavanja i pravi se mreža modela koja predstavlja ponašanje programa. Rezultat ovog modeliranja je primenjiv na razne metode iz oblasti statistike, što omogućava dubinsku matematičku analizu, detekciju anomalija, generisanju testova i simulaciju raznih slučajeva. Postoji nekoliko probabilističkih modela, od kojih će u nastavku biti opisana tri proizvoljna. \\
+Ovaj model pojavu grešaka i kvarova gleda kao na verovatnosne događaje. Softver se posmatra u fazi izvršavanja i pravi se mreža modela koja predstavlja ponašanje programa. Rezultat ovog modeliranja je primenjiv na razne metode iz oblasti statistike, što omogućava dubinsku matematičku analizu, detekciju anomalija, generisanju testova i simulaciju raznih slučajeva. Postoji nekoliko probabilističkih modela, od kojih će u nastavku biti opisana dva proizvoljno odabrana. \\
 
 \subsubsection{Modeli stope neuspeha}
 \label{subsec:stopa_neuspeha}
@@ -184,12 +181,8 @@ Razlika je u tome što neki podmodeli podrazumevaju povećanje broja grešaka kr
 \subsubsection{Modeli rasta pouzdanosti}
 \label{subsec:rast_pouzdanosti}
 
-- TODO: reliability growth models
-
-\subsubsection{Markovljev model strukture}
-\label{subsec:markov}
-- TODO: Markov structure models
-
+Ova grupa modela predviđa da li će doći do poboljšanja pouzdanosti kroz testiranje softvera. Model rasta je zapravo odnos pouzdanosti i stope neuspeha programa predstavljen kao funkcija vremena ili kao broj testova.\\
+Postoje dva podmodela: prvi dovodi u korelaciju broj pronađenih i razrešenih grešaka, ukupni akumulirani broj grešaka u vremenskoj jedinici, dok drugi predviđa broj grešaka za vreme testiranja u jedinici vremena. U ovom modelu je najčešća vremenska jedinica jedna nedelja.
 
 \section{Budućnost softvera}
 \label{buducnost}
