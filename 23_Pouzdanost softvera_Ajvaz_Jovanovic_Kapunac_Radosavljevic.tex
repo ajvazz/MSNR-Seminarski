@@ -99,25 +99,71 @@ ipak dolazi iz raznih razloga (mali promaci i male greske se vremenom ispoljavaj
 \section{Modeli i metrike pouzdanosti softvera}	
 \label{sec:modeli_metrike}
 
-- Veoma je vazno proceniti broj potencijalnih gresaka u sistemu \\
-- Istorijski gledano, na svakih 1000 naredbi, desi se u proseku 8 gresaka \\
-- Postoje deterministicki i probabilisticki modeli kojima se moze (pr)oceniti trenutni broj gresaka u sistemu \\
-- Deterministicki meri broj instrukcija, operatora, operanada i ostalih tehnickih detalja, ali i broj gresaka \\
-- Deterministicki se ne oslanja na slucajne dogadjaje, sve je egzaktno
-- Probabilisticki predstavlja ispoljavanja gresaka, ali i njihovo uklanjanje, kao probabilisticke dogadjaje \\
-- U nastavku poglavlja, nabrojacemo glavne predstavnike oba ova modela
+Kao što je prethodno napomenuto, prilikom izgradnje softvera, veoma je važno imati na umu da se greška može naći u bilo kojoj fazi njegovog razvoja. Zato je bitno da se pronađe način procene broja potencijalnih grešaka u sistemu.\\
+Statistika pokazuje da se krajem 20. veka na 1000 linija koda pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov kod sadrži 0.5 neispravnosti na istom broj linija, dok NASA čak ni na 500,000 linija programskog koda ne sadrži niti jedan softverski problem. \cite{Statistika_prosek_gresaka} Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informacije o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
 
-\subsection{Deterministicki modeli}
+
+\subsection{Deterministički model}
 \label{sec:deterministicki}
 
-- dva glavna su: Holstedova metrika i Mek-Kejbova ciklomaticna slozenost
-- TODO
+Ovaj model odlikuje preciznim merama i podacima koji se oslanjanju na same karakteristike programskog koda. Prilikom ocenjivanja, ne uzimaju se u obzir slučajni događaji i greške koji oni prouzrokuju, već su performanse računate prema egzaktnim podacima. Oni uključuju broj različitih operatora, operanada, kao i broj mašinskih instrukcija i grešaka. Fokus je na mehanizmu i načinu rada samog softvera, gde se uvek mogu predvideti očekivana stanja.\\
+Dva najpoznatija deterministička modela su Holstedova metrika i Mek-Kejbova ciklomatična složenost.\footnote{Moris Hauard Holsted (1977), Tomas Mek-Kejb (1976)}
 
-\subsection{Probabilisticki modeli}
+\subsubsection{Holstedova metrika}
+\label{subsec:holsted}
+
+Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali i težinu prilikom njegovog testiranja i debagovanja. U obzir ocene implementacije ulazi broj instrukcija i operacija izvornog koda, koji će biti drugačiji za svaki programski jezik ili arhitekturu na kojoj se program izvršava. Uvodi se sledeća notacija:\\
+\begin{center}
+ \begin{table}[h]
+ \begin{tabular}{|c|c|c|} 
+ \hline
+ Obeležje & Opis & Formula \\ [0ex] 
+ \hline
+ $n_1$ & broj jedinstvenih operatora u programu & \\ 
+ \hline
+ $n_2$ & broj jedinstvenih operanada u programu & \\ 
+ \hline
+ $n$ & vokabular programa & $ n_1 + n_2 $ \\ 
+ \hline
+ $N_1$ & ukupan broj operatora u programu & $ n_1 \cdot log_2(n_1) $ \\ 
+ \hline
+ $N_2$ & ukupan broj operanada u programu & $ n_2 \cdot log_2(n_2) $ \\ 
+ \hline
+ $N$ & dužina programa & $ N_1 + N_2 $ \\
+ \hline
+ $I$ & broj mašinskih instrukcija u programu & \\
+ \hline
+ $V$ & obim programa & $ N \cdot log_2(n_1+n_2) $ \\
+ \hline
+ $D$ & težina čitanja, razumevanja i debagovanja & $ n_1/2 \cdot N_2 / 2  $ \\
+ \hline
+ $M$ & vreme utrošeno na implementaciju & $ V \cdot D $ \\
+ \hline
+ $T$ & vreme utrošeno na testiranje & $ M / k $ \\
+ \hline
+ $E$ & broj grešaka i bagova & $ V / 3000 $ \\
+ \hline
+\end{tabular}
+ \caption{Obeležja u Holstedovoj metrici \cite{ibm_halstead}}
+ \label{tabela:1}
+\end{table}
+\end{center}
+
+- TODO:  ubaciti primer iz knjige? 
+
+\subsubsection{Mek-Kejbova ciklomatična složenost}
+\label{subsec:mekkejb}
+
+Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum,Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum. Nenad.
+
+\subsection{Probabilistički model}
 \label{sec:probabilisticki}
 
+Ovaj model pojavu grešaka i kvarova gleda kao na verovatnosne događaje. Softver se posmatra u fazi izvršavanja i pravi se mreža modela koja predstavlja ponašanje programa. Rezultat ovog modeliranja je primenjiv na razne metode iz oblasti statistike, što omogućava dubinsku matematičku analizu, detekciju anomalija, generisanju testova i simulaciju raznih slučajeva. \\
+
+
 - Odabrati nekoliko i napisati po recenicu o svakom \\
-- TODO \\
+
 
 \section{Budućnost softvera}
 \label{buducnost}
@@ -132,7 +178,7 @@ ipak dolazi iz raznih razloga (mali promaci i male greske se vremenom ispoljavaj
 \addcontentsline{toc}{section}{Literatura}
 \appendix
 \bibliography{seminarski} 
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 
 \appendix
 \section{Dodatak}
