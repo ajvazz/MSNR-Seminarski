@@ -115,7 +115,7 @@ Dva najpoznatija deterministička modela su Holstedova metrika i Mek-Kejbova cik
 Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali i težinu prilikom njegovog testiranja i debagovanja. U obzir ocene implementacije ulazi broj instrukcija i operacija izvornog koda, koji će biti drugačiji za svaki programski jezik ili arhitekturu na kojoj se program izvršava. Uvodi se sledeća notacija:\\
 \begin{center}
  \begin{table}[h]
- \begin{tabular}{|c|c|c|} 
+ \begin{tabular}{|c|c|c|}
  \hline
  Obeležje & Opis & Formula \\ [0ex] 
  \hline
@@ -139,12 +139,12 @@ Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali
  \hline
  $M$ & vreme utrošeno na implementaciju & $ V \cdot D $ \\
  \hline
- $T$ & vreme utrošeno na testiranje & $ M / k $ \\
+ $T$ & vreme utrošeno na testiranje & $ M / 18 $ \\
  \hline
  $E$ & broj grešaka i bagova & $ V / 3000 $ \\
  \hline
 \end{tabular}
- \caption{Obeležja u Holstedovoj metrici \cite{ibm_halstead}}
+ \caption{Obeležja u Holstedovoj metrici. Brojevi dobijeni empirijski \cite{ibm_halstead}}
  \label{tabela:1}
 \end{table}
 \end{center}
