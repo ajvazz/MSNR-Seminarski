@@ -10,6 +10,8 @@
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
 
+\usepackage{epigraph}
+
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
@@ -95,8 +97,9 @@ U nastavku ćemo se baviti delom validacije i evaluacije, tj. predstavićemo mer
 \label{sec:primeri}
 - Izmedju ostalih, dodati primer za Boing (sad ovaj sto je pao, 10. marta) \\
 
-\section{``Program testing can be used to show the presence of bugs, but never to show their absence!'' - Edsger W. Dijkstra}
-\label{sec:dijkstra}
+
+\section{Ispravnost programa}
+\label{sec:ispravnost}
 Greške u razvoju softvera su, kao i svuda, neizbežne.
 Ne možemo da se nadamo visokom nivou pouzdanosti softvera ako te greške ne pokušamo na neki način da uklonimo.
 Dakle, kao što se vidi na slici \ref{fig:rs}, u razvojnom ciklusu softvera testiranje ima izuzetno važnu ulogu.
@@ -111,6 +114,8 @@ Dakle, kao što se vidi na slici \ref{fig:rs}, u razvojnom ciklusu softvera test
 
 \subsection{Ali...}
 \label{subsec:ali}
+\epigraph{\emph{Program testing can be used to show the presence of bugs, but never to show their absence!}}{Edsger W. Dijkstra}
+
 Za skoro svaki, čak i najjednostavniji program postoji ogroman broj mogućih ulaznih vrednosti, tako da je iscrpno testiranje svih mogućnosti praktično neizvodljivo.
 Na primer, da bismo testiranjem dokazali ispravnost programa koji sabira dva 64-bitna broja, bilo bi nam potrebno $2^{64} \cdot 2^{64}$ različitih testova.
 Uz pretpostavku da jedan test traje jednu nanosekundu, iscrpno testiranje bi trajalo $10^{22}$ godina.
@@ -129,10 +134,11 @@ Specifikacija predstavlja model problema i obično sadrži sledeće informacije 
 \end{itemize}
 Verifikacija se sprovodi pod pretpostavkom da je specifikacija validna.
 Sa druge strane, validacija proverava da li specifikacija zadovoljava korisničke potrebe.
-Razliku između verifikacije i validacije na interesantan način objasnio je Beri Bem:
+Verifikacija i validacija se često, iako to nije tačno, izjednačavaju i poistovećuju sa testiranjem.
+Razliku između ova dva pojma na interesantan način objasnio je Beri Bem:
 \begin{quote}
-verification = Are we building the product right? \\
-validation = Are we building the right product?
+\emph{verification = Are we building the product right? \\
+validation = Are we building the right product?}
 \end{quote}
 
 U nastavku ćemo detaljnije objasniti različite vrste verifikacije sofvera, kao i njihov značaj za pouzdanost softvera.
@@ -162,7 +168,7 @@ Posmatra se apstraktna semantika, nadskup konkretne semantike programa, u kojoj 
 
 \end{itemize}
 
-\subsection{Zašto samo odmah ne uradimo sve tačno?}
+\subsection{Formalni dokazi ispravnosti}
 \label{subsec:formalni_dokazi}
 Formalne metode verifikacije softvera podrazumevaju razvoj softvera direktno iz specifikacije i daju matematički dokaz korektnosti programa.
 Uz programski kod uporedo se formira i formalan matematički dokaz kojim se obezbeđuje ispravnost, bez potrebe za naknadnim testiranjem.
