@@ -6,6 +6,8 @@
 \usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
 
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
@@ -89,7 +91,28 @@ U nastavku ćemo se baviti delom validacije i evaluacije, tj. predstavićemo mer
 
 \section{Primeri padova softvera}
 \label{sec:primeri}
-- Izmedju ostalih, dodati primer za Boing (sad ovaj sto je pao, 10. marta) \\
+
+Tokom proteklih godina tehnologija je doživela veliki napredak,ali takodje i fatalne gubitke usled grešaka u softveru.
+Možemo pomisliti da jednom kada ispravno proradi, softver će tako nastaviti zauvek, međutim serije tragedija i haosa koje su uzrokovane padom
+softvera pokazuju suprotno. \\
+\\
+Primeri: \\
+
+-Terac-25 je bila kompjuterski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
+Zbog grešaka u konkurentnom programiranju(višenitno programiranje,skup sekvencijalnih programa se izvršava paralelno)softver nije bio u stanju da detektuje odredjena stanja a deo hardvera za interno zaključavanje, koji su predhodni modeli ove mašine posedovali i koji je sulžio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru.
+Izmedju juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrkovanih masivnim predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
+\\
+
+-Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen 23. septembra usled softverske greške, naime u kompjuteru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska (sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku,primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile) izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bile preblizu njegove površine i usled zagrevanje prolaskom kroz gornje slojeva atmosfere se raspala.\\
+\\
+
+-14. septembra 2004. godine preko 400 aviona je izgubilo vezu sa kontrolom leta u blizini aerodroma u Los Anđelesu,međutim zahvaljujući rezervnoj opremi unutar aviona do nesreće nije došlo. Uzrok gubitka veze je bila greška prekoračenja u brojaču milisekundi u okviru sistema za komunikaciju sa avionima.Ova greška je bila otkrivena i pre incidenta,ali tada je sistem već bio isporučen i instaliran na nekoliko aerodroma pa nije bilo moguće jednostavno ga popraviti i zameniti već je preporučeno da se sistem resetuje na svakih 30 dana kako ne bi došlo do prekoračenja. Ova procedura nije bila ispoštovana i do greške je došlo posle tačno 2 na {32} milisekundi,odnosno 49.7 dana od uključivanja sistema.\\
+\\
+
+-Boing 737 MAX  usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spusta. Istražitelji su se najveću pažnju posvetili proveri kompjuterskog programa MCAS napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa.
+Program reguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole.
+Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svi 157. osoba koje su bile u avionu.
+
 
 
 \section{Ispravnost programa}
