@@ -94,25 +94,29 @@ U nastavku ćemo se baviti delom validacije i evaluacije, tj. predstavićemo mer
 
 Tokom proteklih godina tehnologija je doživela veliki napredak,ali takodje i fatalne gubitke usled grešaka u softveru.
 Možemo pomisliti da jednom kada ispravno proradi, softver će tako nastaviti zauvek, međutim serije tragedija i haosa koje su uzrokovane padom
-softvera pokazuju suprotno. \\
-\\
-Primeri: \\
+softvera pokazuju suprotno.\\
 
--Terac-25 je bila kompjuterski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
-Zbog grešaka u konkurentnom programiranju(višenitno programiranje,skup sekvencijalnih programa se izvršava paralelno)softver nije bio u stanju da detektuje odredjena stanja a deo hardvera za interno zaključavanje, koji su predhodni modeli ove mašine posedovali i koji je sulžio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru.
-Izmedju juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrkovanih masivnim predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
-\\
+\begin{primer}
+\textbf{Terac-25}
+\end{primer}
+Terac-25 je bila kompjuterski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
+Zbog grešaka u konkurentnom programiranju\footnote{ Višenitno programiranje, skup sekvencijalnih programa se izvršava paralelno}, softver nije bio u stanju da detektuje određena stanja, a deo hardvera za interno zaključavanje, koji su predhodni modeli ove mašine posedovali i koji je služio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru.
+Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovanih masivnim predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
 
--Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen 23. septembra usled softverske greške, naime u kompjuteru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska (sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku,primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile) izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bile preblizu njegove površine i usled zagrevanje prolaskom kroz gornje slojeva atmosfere se raspala.\\
-\\
+\begin{primer}
+\textbf{Marsov klimatski orbiter}
+\end{primer}
+Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u kompjuteru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
 
--14. septembra 2004. godine preko 400 aviona je izgubilo vezu sa kontrolom leta u blizini aerodroma u Los Anđelesu,međutim zahvaljujući rezervnoj opremi unutar aviona do nesreće nije došlo. Uzrok gubitka veze je bila greška prekoračenja u brojaču milisekundi u okviru sistema za komunikaciju sa avionima.Ova greška je bila otkrivena i pre incidenta,ali tada je sistem već bio isporučen i instaliran na nekoliko aerodroma pa nije bilo moguće jednostavno ga popraviti i zameniti već je preporučeno da se sistem resetuje na svakih 30 dana kako ne bi došlo do prekoračenja. Ova procedura nije bila ispoštovana i do greške je došlo posle tačno 2 na {32} milisekundi,odnosno 49.7 dana od uključivanja sistema.\\
-\\
+\begin{primer}
+\textbf{Letovi u Los Anđelesu}
+\end{primer}
+14. septembra 2004. godine preko 400 aviona je izgubilo vezu sa kontrolom leta u blizini aerodroma u Los Anđelesu, međutim zahvaljujući rezervnoj opremi unutar aviona do nesreće nije došlo. Uzrok gubitka veze je bila greška prekoračenja u brojaču milisekundi u okviru sistema za komunikaciju sa avionima. Ova greška je bila otkrivena i pre incidenta, ali tada je sistem već bio isporučen i instaliran na nekoliko aerodroma, pa nije bilo moguće jednostavno ga popraviti i zameniti, već je preporučeno da se sistem resetuje na svakih 30 dana kako ne bi došlo do prekoračenja. Ova procedura nije bila ispoštovana i do greške je došlo posle tačno $2^{32}$ milisekundi, odnosno 49.7 dana od uključivanja sistema.\\
 
--Boing 737 MAX  usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spusta. Istražitelji su se najveću pažnju posvetili proveri kompjuterskog programa MCAS napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa.
-Program reguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole.
-Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svi 157. osoba koje su bile u avionu.
-
+\begin{primer}
+\textbf{Boing 737 MAX}
+\end{primer}
+Usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spušta. Istražitelji su najveću pažnju posvetili proveri kompjuterskog programa MCAS, napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa. Program reaguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole. Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima, nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svih 157 osoba koje su bile u avionu, od kojih je jedan iz Srbije.\\
 
 
 \section{Ispravnost programa}
@@ -140,8 +144,7 @@ Testiranje je važno i podiže stepen pouzdanosti softvera, pomaže nam da uvidi
 
 Očigledno nam je potreban bolji pristup za dokazivanje ispravnosti programa.
 Grana računarstva koja se time bavi je verifikacija softvera.
-Tačnije, proces verifikacije podrazumeva proveru da li program zadovoljava zadatu specifikaciju.
-Specifikacija predstavlja model problema i obično sadrži sledeće informacije \cite{laski2009software}:
+Tačnije, proces verifikacije podrazumeva proveru da li program zadovoljava zadatu specifikaciju. Specifikacija predstavlja model problema i obično sadrži sledeće informacije \cite{laski2009software}:
 \begin{itemize}
 \item ulazni parametri
 \item izlazni parametri
@@ -203,11 +206,10 @@ Neki od primera formalno verifikovanog softvera su:
 primer nekog dokaza u izabelu u dodatku...\\
 
 
-
 \section{Modeli i metrike pouzdanosti softvera}	
 \label{sec:modeli_metrike}
 
-Kao što je prethodno napomenuto, prilikom izgradnje softvera, veoma je važno imati na umu da se greška može naći u bilo kojoj fazi njegovog razvoja. Zato je bitno da se pronađe način procene broja potencijalnih grešaka u sistemu.\\
+Prilikom izgradnje softvera, veoma je važno imati na umu da se greška može naći u bilo kojoj fazi njegovog razvoja. Zato je bitno da se pronađe način procene broja potencijalnih grešaka u sistemu.\\
 Statistika pokazuje da se krajem 20. veka na 1000 linija koda pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov kod sadrži 0.5 neispravnosti na istom broj linija, dok NASA čak ni na 500,000 linija programskog koda ne sadrži niti jedan softverski problem \cite{Statistika_prosek_gresaka}. Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informaciju o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
 
 
