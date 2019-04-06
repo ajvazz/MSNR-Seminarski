@@ -66,7 +66,7 @@
 \maketitle
 
 \abstract{
-Softver igra sve veću ulogu u modernom svetu i stoga je sve važnije da on bude ispravan. U ovom radu ćemo navesti primere katastrofalnih softverskih grešaka, a zatim ćemo prikazati različite metode za izbegavanje i uklanjanje takvih grešaka u različitim fazama razvoja. Posvetićemo pažnju i mogućnostima unapređenja procesa razvoja softvera koje nam donose nove tehnologije.
+Softver igra sve veću ulogu u modernom svetu i stoga je sve važnije da on bude ispravan. Navešćemo primere katastrofalnih softverskih grešaka, a zatim ćemo prikazati različite metode za izbegavanje i uklanjanje takvih grešaka u različitim fazama razvoja. Posvetićemo pažnju i mogućnostima unapređenja procesa razvoja softvera koje nam donose nove tehnologije.
 }
 
 \tableofcontents
@@ -76,23 +76,26 @@ Softver igra sve veću ulogu u modernom svetu i stoga je sve važnije da on bude
 \section{Uvod}
 \label{sec:uvod}
 
-U vreme ,,softverske krize‘‘ započet je razvoj na polju softverskog inžinjeringa. Programeri su radili na tome da isporuče što moćniji sistem i što efikasnije aplikacije, ali su nailazili na različite probeleme, kao što su kašnjenje isporuka, troškova većih od predviđenog, bagova koje je bilo teško ispraviti, i još mnogo toga.\\
-Softver danas ima značajnu ulogu u društvu i sve je rasprostranjeniji te je njegova pouzdanost veoma relevantna, posebno ako se u obzir uzme prisutnost u zdravstu, gde ima direktan uticaj na ljudske živote.\\
+U vreme ,,softverske krize‘‘ započet je razvoj na polju softverskog inženjerstva.
+Programeri su radili na tome da isporuče što moćniji sistem i što efikasnije aplikacije, ali su nailazili na različite probleme, kao što su kašnjenje isporuka, troškovi veći od predviđenog, bagovi koje je teško ispraviti, i još mnogo toga.
+Softver danas ima značajnu ulogu u društvu i sve je rasprostranjeniji, te je njegova pouzdanost veoma relevantna, posebno ako se u obzir uzme prisutnost u zdravstvu, gde ima direktan uticaj na ljudske živote.
 
-Razvoj softvera je disciplina koja se bavi proizvodnjom softvera, razvojnih alata, metodologija i teorema koje podržavaju razvoj. Inžinjeri softvera pri izradi prate proces od četiri koraka, a to su:
-\begin{enumerate}
-	\item Specifikacija - koje funkcije će omogućiti softver
-	\item Razvoj - proizvodnja softvera koji zadovoljava navedene specifikacije
-	\item Validacija - pouzdanost softvera, testiranje softvera
-	\item Evaluacija - izmena softvera da bi se ispunila očekivanja softvera
-\end{enumerate}
+Razvoj softvera je disciplina koja se bavi proizvodnjom softvera, razvojnih alata, metodologija i teorema koje podržavaju razvoj.
+Inženjeri softvera pri izradi prate proces od nekoliko koraka koji su prikazani na slici \ref{fig:rs}.
+U nastavku ćemo se fokusirati na deo sa testiranjem, kao i njegovu vezu sa pouzdanošću softvera.
+Pouzdanost softvera se definiše kao verovatnoća ispravnog rada sistema tokom određenog vremena, pri određenim uslovima \cite{pham_reliability}.
+Malo neformalnije, pouzdanost je mera slaganja sistema sa svojom specifikacijom.
 
-U nastavku ćemo se baviti delom validacije i evaluacije, tj. predstavićemo mere i modele pouzdanosti softvera, metode za poboljšanje pouzdanosti, kao i primere u kojima su greške u sistemu dovele do ozbiljnih problema.
+Da bismo istakli važnost pouzdanosti, počećemo, u poglavlju \ref{sec:primeri}, sa nekim primerima velikih problema koji su nastali usled nepouzdanog softvera \cite{quinn_ethics}.
+Potom ćemo se, u poglavlju \ref{sec:ispravnost}, baviti ispravnošću programa, kao osnovom pouzdanosti, gde ćemo zagrebati površinu oblasti verifikacije softvera \cite{laski2009software}.
+Nakon toga ćemo, u poglavlju \ref{sec:modeli_metrike}, prikazati neke od modela i metrika koji se koriste u procenjivanju pouzdanosti softvera \cite{pham_reliability}.
+Na kraju ćemo, u poglavlju \ref{sec:buducnost}, razmotriti moguća unapređenja celokupnog procesa razvoja softvera korišćenjem novih dostignuća na polju veštačke inteligencije.
+
 
 \section{Primeri padova softvera}
 \label{sec:primeri}
 
-Tokom proteklih godina tehnologija je doživela veliki napredak,ali takodje i fatalne gubitke usled grešaka u softveru.
+Tokom proteklih godina tehnologija je doživela veliki napredak, ali takodje i fatalne gubitke usled grešaka u softveru.
 Možemo pomisliti da jednom kada ispravno proradi, softver će tako nastaviti zauvek, međutim serije tragedija i haosa koje su uzrokovane padom
 softvera pokazuju suprotno.\\
 
@@ -106,7 +109,7 @@ Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovan
 \begin{primer}
 \textbf{Marsov klimatski orbiter}
 \end{primer}
-Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u kompjuteru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
+Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u računaru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
 
 \begin{primer}
 \textbf{Letovi u Los Anđelesu}
@@ -191,26 +194,26 @@ Posmatra se apstraktna semantika, nadskup konkretne semantike programa, u kojoj 
 \subsection{Formalni dokazi ispravnosti}
 \label{subsec:formalni_dokazi}
 Formalne metode verifikacije softvera podrazumevaju razvoj softvera direktno iz specifikacije i daju matematički dokaz korektnosti programa.
-Uz programski kod uporedo se formira i formalan matematički dokaz kojim se obezbeđuje ispravnost, bez potrebe za naknadnim testiranjem.
+Uz programski k\^{o}d uporedo se formira i formalan matematički dokaz kojim se obezbeđuje ispravnost, bez potrebe za naknadnim testiranjem.
 U te svrhe se koriste alati za interaktivno dokazivanje teorema, kao što su Isabelle/HOL \cite{isabelle} i Coq \cite{coq}.
 Ovakvo rešenje je najbolje što se tiče pouzdanosti softvera, jer je matematički dokazana ispravnost.
 Međutim, zbog potrebe za stručnjacima koji će to sprovoditi, povećavaju se troškovi, kao i trajanje razvojnog procesa, tako da ne čudi što se u industriji ove metode koriste samo u retkim slučajevima, i to samo za najkritičnije delove koda.\\
 Neki od primera formalno verifikovanog softvera su:
 \begin{itemize}
 \item CompCert - kompilator za programski jezik C \cite{compcert}
-\item seL4 - jezgro operativnog sistema (koristi se u avio-industriji) \cite{sel4}
+\item seL4 - jezgro operativnog sistema (koristi se npr. u avio-industriji) \cite{sel4}
 \item CakeML - implementacija programskog jezika ML sa formalno verifikovanim kompilatorom \cite{cakeml}
 \item IronFleet - distribuirani sistemi \cite{ironfleet}
 \end{itemize}
 
-primer nekog dokaza u izabelu u dodatku...\\
+Radi ilustracije, u dodatku \ref{sec:dodatak} dajemo primer dokaza algoritma quicksort iz dokumentacije Isabelle-a.
 
 
 \section{Modeli i metrike pouzdanosti softvera}	
 \label{sec:modeli_metrike}
 
 Prilikom izgradnje softvera, veoma je važno imati na umu da se greška može naći u bilo kojoj fazi njegovog razvoja. Zato je bitno da se pronađe način procene broja potencijalnih grešaka u sistemu.\\
-Statistika pokazuje da se krajem 20. veka na 1000 linija koda pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov kod sadrži 0.5 neispravnosti na istom broj linija, dok NASA čak ni na 500,000 linija programskog koda ne sadrži niti jedan softverski problem \cite{Statistika_prosek_gresaka}. Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informaciju o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
+Statistika pokazuje da se krajem 20. veka na 1000 linija koda pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov k\^{o}d sadrži 0.5 neispravnosti na istom broj linija, dok NASA čak ni na 500,000 linija programskog koda ne sadrži niti jedan softverski problem \cite{Statistika_prosek_gresaka}. Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informaciju o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
 
 
 \subsection{Deterministički modeli}
@@ -296,14 +299,15 @@ Postoje dva podmodela: prvi dovodi u korelaciju broj pronađenih i razrešenih g
 
 
 \section{Budućnost softvera}
-\label{buducnost}
+\label{sec:buducnost}
 
 Sa poboljšanjem hardvera, mogućnosti softvera postaju sve veće. Pomaci u oblastima veštačke inteligencije i mašinskog učenja omogućavaju mašinama da zamene ljude u nekim delatnostima, što donosi mnoge prednosti kao što su ubrzanje rada, smanjenje troškova i uklanjanje grešaka koje ljudi prave.
 
 \subsection{Veštački programeri - fantastika ili realnost?}
-Mnogi programerski alati već postoje koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju, ili debagovanje. Sa napretkom veštačke inteligencije, mogućnost automatizacije raznih faza razvoja softvera raste. \\
+Mnogi programerski alati već postoje koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju, ili debagovanje.
+Sa napretkom veštačke inteligencije, mogućnost automatizacije raznih faza razvoja softvera raste.
 
-Naravno, ideja da će kompjuter sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo kod od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpno za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov kod. Jedan takav sistem je Bayou\cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti. \\
+Naravno, ideja da će računar sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo k\^{o}d od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpno za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov k\^{o}d. Jedan takav sistem je Bayou \cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti.
 
 Ova oblast tek počinje da se razvija, pa napredni sistemi tog tipa, ako postoje, nisu dostupni široj javnosti. Jasno je da ako je sistem ispravan, generisaće ispravne programe. Međutim, verifikacija sistema koji se trenira mašinskim učenjem nije jednostavna, a ni moguća u svim slučajevima. Programe dobijene na ovakav način će biti neophodno verifikovati i najverovatnije modifikovati, ali će proces razvoja biti znatno ubrzan upotrebom veštačke inteligencije. 
 
@@ -317,13 +321,59 @@ Ova oblast tek počinje da se razvija, pa napredni sistemi tog tipa, ako postoje
 \bibliography{seminarski} 
 \bibliographystyle{ieeetr}
 
+\clearpage
+
 \appendix
 \section{Dodatak}
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
-Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
+\label{sec:dodatak}
+Algoritam sortiranja quicksort implementiran je na prirodan način za funkcionalni programski jezik.
+Njegova korektnost dokazana je pomoću matematičke indukcije, koristeći ugrađene automatske dokazivače teorema uz pomoć nekih već dokazanih svojstava sortiranih lista.
+
+\begin{lstlisting}[caption={Isabelle dokaz korektnosti algoritma quicksort}]
+(*  Author:     Tobias Nipkow
+    Copyright   1994 TU Muenchen
+*)
+
+section <Quicksort with function package>
+
+theory Quicksort
+imports "HOL-Library.Multiset"
+begin
+
+context linorder
+begin
+
+fun quicksort :: "'a list => 'a list" where
+  "quicksort []     = []"
+| "quicksort (x#xs) = quicksort [y<-xs. \<not> x\<le>y] @ [x] @ quicksort [y<-xs. x\<le>y]"
+
+lemma [code]:
+  "quicksort []     = []"
+  "quicksort (x#xs) = quicksort [y<-xs. \<not> x\<le>y] @ [x] @ quicksort [y<-xs. x\<le>y]"
+  by (simp_all add: not_le)
+
+lemma quicksort_permutes [simp]:
+  "mset (quicksort xs) = mset xs"
+  by (induct xs rule: quicksort.induct) (simp_all add: ac_simps)
+
+lemma set_quicksort [simp]: "set (quicksort xs) = set xs"
+proof -
+  have "set_mset (mset (quicksort xs)) = set_mset (mset xs)"
+    by simp
+  then show ?thesis by (simp only: set_mset_mset)
+qed
+
+lemma sorted_quicksort: "sorted (quicksort xs)"
+  by (induct xs rule: quicksort.induct) (auto simp add: sorted_append not_le less_imp_le)
+
+theorem sort_quicksort:
+  "sort = quicksort"
+  by (rule ext, rule properties_for_sort) (fact quicksort_permutes sorted_quicksort)+
+
+end
+
+end
+\end{lstlisting}
 
 
 \end{document}
