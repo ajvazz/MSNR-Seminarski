@@ -57,7 +57,7 @@
 
 \begin{document}
 
-\title{Pouzdanost softvera\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+\title{Implementirano $\neq$ testirano $\neq$ ispravno\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
 \author{Nenad Ajvaz, Stefan Kapunac, Filip Jovanović, Aleksandra Radosavljević\\ nenadajvaz@hotmail.com, stefankapunac@gmail.com, \\jovanovic16942@gmail.com, aleksandraradosavljevic.@live.com}
 
@@ -100,9 +100,9 @@ Možemo pomisliti da jednom kada ispravno proradi, softver će tako nastaviti za
 softvera pokazuju suprotno.\\
 
 \begin{primer}
-\textbf{Terac-25}
+\textbf{Therac-25}
 \end{primer}
-Terac-25 je bila kompjuterski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
+Therac-25 je bila računarski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
 Zbog grešaka u konkurentnom programiranju\footnote{ Višenitno programiranje, skup sekvencijalnih programa se izvršava paralelno}, softver nije bio u stanju da detektuje određena stanja, a deo hardvera za interno zaključavanje, koji su predhodni modeli ove mašine posedovali i koji je služio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru.
 Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovanih masivnim predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
 
@@ -119,7 +119,7 @@ Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala
 \begin{primer}
 \textbf{Boing 737 MAX}
 \end{primer}
-Usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spušta. Istražitelji su najveću pažnju posvetili proveri kompjuterskog programa MCAS, napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa. Program reaguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole. Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima, nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svih 157 osoba koje su bile u avionu, od kojih je jedan iz Srbije.\\
+Usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spušta. Istražitelji su najveću pažnju posvetili proveri računarskog programa MCAS, napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa. Program reaguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole. Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima, nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svih 157 osoba koje su bile u avionu, od kojih je jedan iz Srbije.\\
 
 
 \section{Ispravnost programa}
@@ -307,14 +307,21 @@ Sa poboljšanjem hardvera, mogućnosti softvera postaju sve veće. Pomaci u obla
 Mnogi programerski alati već postoje koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju, ili debagovanje.
 Sa napretkom veštačke inteligencije, mogućnost automatizacije raznih faza razvoja softvera raste.
 
-Naravno, ideja da će računar sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo k\^{o}d od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpno za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov k\^{o}d. Jedan takav sistem je Bayou \cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti.
+Naravno, ideja da će računar sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo k\^{o}d od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpljujuće za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov k\^{o}d. Jedan takav sistem je Bayou \cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti.
 
 Ova oblast tek počinje da se razvija, pa napredni sistemi tog tipa, ako postoje, nisu dostupni široj javnosti. Jasno je da ako je sistem ispravan, generisaće ispravne programe. Međutim, verifikacija sistema koji se trenira mašinskim učenjem nije jednostavna, a ni moguća u svim slučajevima. Programe dobijene na ovakav način će biti neophodno verifikovati i najverovatnije modifikovati, ali će proces razvoja biti znatno ubrzan upotrebom veštačke inteligencije. 
 
 \section{Zaključak}
 \label{sec:zakljucak}
-
-- TODO \\
+Na osnovu svega navedenog, zaključujemo da u razvoju softvera nije dovoljno poznavati samo programski jezik i biti vešt u programiranju,
+već je neophodno imati duboke uvide u domen primene.
+Najbolje bi bilo da sve što implementiramo i formalno dokažemo.
+Međutim, kako je to najčešće neizvodljivo, tj. neisplativo, moramo se ozbiljno posvetiti praćenju i održavanju nivoa pouzdanosti softvera
+na neki drugi, ,,jednostavniji'' način, poput testiranja.
+Moramo biti svesni da će do grešaka doći. 
+Biće nam lakše da se na to pripremimo i adekvatno odreagujemo kada do greške dođe
+ako unapred znamo koji delovi su podložni padovima i sa kojom verovatnoćom.
+Očekujemo da će u budućnosti mnogi koraci razvoja biti automatizovani pre svega upotrebom veštačke inteligencije, ali i drugih metoda.
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
