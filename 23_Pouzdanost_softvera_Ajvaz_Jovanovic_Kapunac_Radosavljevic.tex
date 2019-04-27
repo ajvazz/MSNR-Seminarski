@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 
+
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
 
@@ -104,13 +105,27 @@ Možemo pomisliti da jednom kada započne sa radom i pokaže se ispravnim i odgo
 Therac-25 je bila računarski kontrolisana mašina za terapiju zračenjem, proizvedena 1986.
 Zbog grešaka u konkurentnom programiranju\footnote{ Višenitno programiranje, skup sekvencijalnih programa se izvršava paralelno}, softver nije bio u stanju da detektuje određena stanja, a deo hardvera za interno zaključavanje, koji su prethodni modeli ove mašine posedovali i koji je služio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru. Ovaj propust je doveo do masovne pojave neodgovarajućih emisija zračenja.
 Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovanih predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
+\graphicspath{ {./images/} }
+
+\includegraphics{therac}\\
+       Therac-25
+ \\
 
 \begin{primer}
 \textbf{Mars Climate Orbiter(NASA), 1999 }
 \end{primer}
 Mars climate orbiter je bila robotska svemirska sonda koju je NASA(eng. National Aeronautics and Space Administration,
-NASA) lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u računaru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između NASA i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
+NASA) lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u računaru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između NASA i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeve atmosfere se raspala.\\
 Cena ove greške iznosila je oko \$125.000.000.\\
+
+
+
+\graphicspath{ {./images/} }
+
+\includegraphics{MCO}\\
+Mars Climate Orbiter(NASA), 1999\\
+\\
+ 
 
 
 \begin{primer}
@@ -121,7 +136,7 @@ Cena ove greške iznosila je oko \$125.000.000.\\
 \begin{primer}
 \textbf{Boing 737 MAX}
 \end{primer}
-Usled greske u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spušta. Istražitelji su najveću pažnju posvetili proveri računarskog programa MCAS, napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa. Program reaguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole. Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima, nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svih 157 osoba koje su bile u avionu, od kojih je jedan iz Srbije.\\
+Usled greške u softveru koji je ,,verovao‘‘ da je avion u opasnosti od iznenadnog gašenja motora i forsirao prednji deo aviona da počne da se spušta. Istražitelji su najveću pažnju posvetili proveri računarskog programa MCAS, napravljen da pomogne pilotima da drže kontrolu nad avionima ovog tipa. Program reaguje kada senzori u kljunu aviona pokažu da se letelica penje pod prevelikim uglom, što može da dovede do gubitka kontrole. Piloti su se borili protiv sistema aviona ceo put i ispoštovali sve procedure pre pada aviona. Uprkos njihovim naporima, nisu uspeli da uspostave kontrolu nad letelicom i avion se srušio 10. marta 2019. i u nesreći je poginulo svih 157 osoba koje su bile u avionu, od kojih je jedan iz Srbije.\\
 
 
 \section{Ispravnost programa}
