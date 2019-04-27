@@ -81,7 +81,7 @@ Programeri su radili na tome da isporuče što moćniji sistem i što efikasnije
 Softver danas ima značajnu ulogu u društvu i sve je rasprostranjeniji, te je njegova pouzdanost veoma relevantna, posebno ako se u obzir uzme prisutnost u zdravstvu, gde ima direktan uticaj na ljudske živote.
 
 Razvoj softvera je disciplina koja se bavi proizvodnjom softvera, razvojnih alata, metodologija i teorema koje podržavaju razvoj.
-Inženjeri softvera pri izradi prate proces od nekoliko koraka koji su prikazani na slici \ref{fig:rs}.
+Softverski inžinjeri pri izradi prate proces od nekoliko koraka koji su prikazani na slici \ref{fig:rs}.
 U nastavku ćemo se fokusirati na deo sa testiranjem, kao i njegovu vezu sa pouzdanošću softvera.
 Pouzdanost softvera se definiše kao verovatnoća ispravnog rada sistema tokom određenog vremena, pri određenim uslovima \cite{pham_reliability}.
 Malo neformalnije, pouzdanost je mera slaganja sistema sa svojom specifikacijom.
@@ -92,24 +92,26 @@ Nakon toga ćemo, u poglavlju \ref{sec:modeli_metrike}, prikazati neke od modela
 Na kraju ćemo, u poglavlju \ref{sec:buducnost}, razmotriti moguća unapređenja celokupnog procesa razvoja softvera korišćenjem novih dostignuća na polju veštačke inteligencije.
 
 
-\section{Primeri padova softvera}
+\section{Primeri neuspeha}
 \label{sec:primeri}
 
-Tokom proteklih godina tehnologija je doživela veliki napredak, ali takođe i fatalne gubitke usled grešaka u softveru.
-Možemo pomisliti da jednom kada ispravno proradi, softver će tako nastaviti zauvek, međutim serije tragedija i haosa koje su uzrokovane padom
-softvera pokazuju suprotno.\\
+Tokom proteklih godina tehnologija je doživela veliki napredak, ali usled grešaka u softveru uzrokovala velike materijalne gubitke kao i ljudske zrtve.
+Možemo pomisliti da jednom kada započne sa radom i pokaže se ispravnim i odgovarajućim, softver će tako nastaviti zauvek, međutim serije tragedija i haosa koje su uzrokovane padom softvera pokazuju suprotno.\\
 
 \begin{primer}
-\textbf{Therac-25}
+\textbf{Therac-25,1985.}
 \end{primer}
-Therac-25 je bila računarski kontrolisana mašina za radijalnu terapiju proizvedena 1986.
-Zbog grešaka u konkurentnom programiranju\footnote{ Višenitno programiranje, skup sekvencijalnih programa se izvršava paralelno}, softver nije bio u stanju da detektuje određena stanja, a deo hardvera za interno zaključavanje, koji su prethodni modeli ove mašine posedovali i koji je služio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru.
-Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovanih masivnim predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
+Therac-25 je bila računarski kontrolisana mašina za terapiju zračenjem, proizvedena 1986.
+Zbog grešaka u konkurentnom programiranju\footnote{ Višenitno programiranje, skup sekvencijalnih programa se izvršava paralelno}, softver nije bio u stanju da detektuje određena stanja, a deo hardvera za interno zaključavanje, koji su prethodni modeli ove mašine posedovali i koji je služio da spreči ovakve greške ukoliko do njih dodje, otklonjen je i sve provere bezbednosti prepuštene su softveru. Ovaj propust je doveo do masovne pojave neodgovarajućih emisija zračenja.
+Između juna 1985. i januara 1987. dogodilo se šest poznatih nesreća uzrokovanih predoziranjem zračenja koje su dovele do smrti i ozbiljnih povreda pacijenata.\\
 
 \begin{primer}
-\textbf{Marsov klimatski orbiter}
+\textbf{Mars Climate Orbiter(NASA), 1999 }
 \end{primer}
-Marsov klimatski orbiter je bila robotska svemirska sonda koju je Nasa lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u računaru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između Nase i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
+Mars climate orbiter je bila robotska svemirska sonda koju je NASA(eng. National Aeronautics and Space Administration,
+NASA) lansirala 11. decembra 1998. sa ciljem da istraži klimu i promene na površini Marsa. Kontakt sa sondom izgubljen je 23. septembra usled softverske greške, naime u računaru u kontroli misije na Zemlji koji je jedinicu za vrednost potiska\footnote{ Sila koja gura telo u suprotnom smeru od kojeg ga neke druge sile vuku, primer sila koja deluje na telo potopljeno u tečnost u suprotnom smeru od gravitacione sile} izražavao američkim jedinicama (funtama u sekundi), umesto standardnim jedinicama SI sistema (njutnima u sekundi) kako je bilo ugovoreno između NASA i kompanije Lokid Martin. Usled toga sonda je pri ulasku u Marsovu orbitu išla trajektorijom koja je bila preblizu njegove površine i usled zagrevanja prolaskom kroz gornje slojeva atmosfere se raspala.\\
+Cena ove greške iznosila je oko \$125.000.000.\\
+
 
 \begin{primer}
 \textbf{Letovi u Los Anđelesu}
@@ -136,7 +138,7 @@ Dakle, kao što se vidi na slici \ref{fig:rs}, u razvojnom ciklusu softvera test
 \label{fig:rs}
 \end{figure}
 
-\subsection{Model problema}
+\subsection{Model problema i verifikacija softvera}
 \label{subsec:ali}
 \epigraph{\emph{Program testing can be used to show the presence of bugs, but never to show their absence!}}{Edsger W. Dijkstra}
 
@@ -164,9 +166,8 @@ Razliku između ova dva pojma na interesantan način objasnio je Beri Bem:
 validation = Are we building the right product?}
 \end{quote}
 
-U nastavku ćemo detaljnije objasniti različite vrste verifikacije sofvera, kao i njihov značaj za pouzdanost softvera.
 
-\subsection{Verifikacija softvera}
+\subsection{Vrste verifikacije i njihov značaj za pouzdanost softvera}
 \label{subsec:verifikacija}
 Verifikacija softvera se u osnovi deli na dinamičku i statičku.\\
 Dinamička verifikacija podrazumeva ispitivanje korektnosti programa u toku njegovog izvršavanja.
@@ -317,7 +318,7 @@ Postoje dva podmodela: prvi dovodi u korelaciju broj pronađenih i razrešenih g
 Sa poboljšanjem hardvera, mogućnosti softvera postaju sve veće. Pomaci u oblastima veštačke inteligencije i mašinskog učenja omogućavaju mašinama da zamene ljude u nekim delatnostima, što donosi mnoge prednosti kao što su ubrzanje rada, smanjenje troškova i uklanjanje grešaka koje ljudi prave.
 
 \subsection{Veštački programeri - fantastika ili realnost?}
-Mnogi programerski alati već postoje koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju, ili debagovanje.
+Postojemnogi prgramerski alati koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju, ili debagovanje.
 Sa napretkom veštačke inteligencije, mogućnost automatizacije raznih faza razvoja softvera raste.
 
 Naravno, ideja da će računar sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo k\^{o}d od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpljujuće za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov k\^{o}d. Jedan takav sistem je Bayou \cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti.
