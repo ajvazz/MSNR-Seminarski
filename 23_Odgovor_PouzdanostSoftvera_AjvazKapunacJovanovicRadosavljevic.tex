@@ -1,0 +1,271 @@
+
+
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\title{Implementirano $\neq$ testirano $\neq$ ispravno\\
+\small{\normalsize{Nenad Ajvaz, Stefan Kapunac, Filip Jovanović, Aleksandra Radosavljević}}}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Recenzent \odgovor{--- ocena: 5} }
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Rad govori o važnosti provere softvera pre njegovog isporučivanja. Navedeno je nekoliko problema koji su nastali usled grešaka u softveru, a u nastavku je bilo reči o vrstama verifikacije softvera sa fokusom na statičku verifikaciju i formalne metode dokazivanja tačnosti programa, navedene su metrike i modeli pouzdanosti softvera, a na samom kraju pomenuti su alati za automatsko generisanje kôda.
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+\textbf{Primedbe:}
+\begin{itemize}
+    \item Prema zadatim uslovima seminarskog, rad mora biti dug najmanje deset strana bez dodatka.
+\end{itemize}
+
+\textbf{Sugestije:}
+\begin{itemize}
+    \item Ubaciti nešto o alatima za testiranje softvera (npr. \textit{Selenium}) što bi zainteresovalo čitaoca i omogućilo mu da uđe dublje u tu oblast, te na taj način dati pokriće rečenici \textit{'u nastavku ćemo se fokusirati na deo sa testiranjem'} koja se nalazi u uvodu.
+\end{itemize}
+
+\odgovor{
+Sugestija je prihvaćena, dodat je odeljak 3.4 o alatu za testiranje softvera \textit{Selenium}, kao i jednostavan primer primene Holstedove metrike na delu C koda (unutar odeljka 4.1.1), što dovodi do toga da rad ispunjuje uslov o dovoljnom broju strana.
+}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+U radu nisu primećene štamparske greške. 
+
+Predlog recezenta je da autori kroz rad standardizuju način korišćenja anglicizama, skraćenica i bukvalno prevedenih sintagmi. Npr. 'Mars Climate Orbiter' ne treba bukvalno prevoditi kao 'Marsov klimatski orbiter' već koristiti 'Marsov orbiter za proučavanje klime (eng. \textit{Mars Climate Orbiter})', umesto 'Nasa' koristiti '\textit{NASA} (eng. \textit{National Aeronautics and Space Administration, NASA})' i onda dalje u tekstu \textit{'NASA'} iskošenim slovima jer se radi o skraćenici. Iskošenim slovima pisati sva imena alata i programskih jezika koji su na engleskom. Skraćenice ne treba menjati po padežima npr. umesto 'od \textit{NASA-e}' ili 'od \textit{Nase}' koristiti 'od agencije \textit{NASA}'.\\
+
+\odgovor{
+Sugestije o bukvalnim prevodima, imenima kompanija i alata su prihvaćene, dok autori smatraju da posebno isticanje nazive programskih jezika iskošenim slovima nije potrebno, jer prevelik broj takvog isticanja smanjuje efekat nekih ključnih reči na koje čitalac treba da obrati pažnju.
+}\\
+
+Sugestije za izmenu stilskog oblika za koji recezent smatra da nije odgovarajuć za akademski rad biće navedene samo jednom, ukoliko to nije veoma bitna primedba, i biće dat predlog ispravke na mestu gde se to prvi put pojavljuje u radu. Npr. predlog da se \textit{inženjeri softvera} preformuliše u \textit{softverski inženjeri} biće dat samo na prvom mestu gde se ovo pojavljuje i neće biti dodatno navođen ukoliko se ista ili neka slična formulacija nađe još negde u radu. Ove primedbe ne predstavljaju greške, već samo sugestije koje autori rada ne moraju obavezno prihvatiti.
+
+\begin{itemize}
+    \item Sažetak:
+    \begin{enumerate}
+        \item Smanjiti korišćenje kvalifikativa bez konkretnog značenja npr. \textit{'primeri katastrofalnih softverskih grešaka'} preformulisati u \textit{'primeri grešaka u softveru'}
+        
+        \item Takođe dalje u radu zameniti \textit{'fatalni gubici zbog grešaka'} sa \textit{'gubici zbog grešaka'}. Eventualno \textit{'veliki'}, dok treba izbegavati fatalni, enormni itd...
+    \end{enumerate}
+    
+\odgovor{
+Sugestija je prihvaćena na mestima gde je to moguće, negde je takvim izrazima potrebno istaći važnost i snažan efekat do kojih su softverske greške dovele.
+}    
+    
+    \item Uvod:
+    \begin{enumerate}
+        \item \textit{Inženjeri softvera} preformulisati u \textit{softverski inženjeri}
+        \item \textit{'U nastavku ćemo se fokusirati na deo sa testiranjem'} preformulisati u \textit{'U nastavku ćemo se fokusirati na fazu razvoja softvera koja se bavi testiranjem'}. Iako se misli na deo slike na kojoj se nalaze faze razvoja softvera bilo bi dobro to odmah pojasniti.
+    \end{enumerate}
+    
+\odgovor{
+Sve sugestije su prihvaćene i navedeni delovi su izmenjeni.
+}     
+    
+    \item Primeri padova softvera:
+    \begin{enumerate}
+        \item Promeniti naslov sekcije u \textit{'Primeri otkazivanja softvera'} ili \textit{'Primeri grešaka u radu softvera'}
+
+\odgovor{
+Naslov sekcije je promenjen u ,,\textit{Primeri neispravnog softvera}‘‘.
+}        
+        
+        \item Materijalni gubici nastali usled grešaka u softveru ne predstavljaju gubitke tehnologije u okviru koje su razvijeni. Znanja koje ljudi poseduju iz te oblasti kao i sama tehnologija ostaju na istom nivou. Predlog je stoga preformulisati \textit{'tehnologija je doživela fatalne gubitke'} u \textit{'I pored toga što je tehnologija doživela veliki napredak, usled grešaka u softveru, dešavali su se materijalni gubici'}.
+        \item Treba izbegavati književni način pisanja i preći na akademski, stoga je predlog da se rečenice pisane u stilu \textit{'Možemo pomisliti da jednom kada proradi, softver će tako nastaviti zauvek, međutim...'} preformulišu u \textit{'To što softver proradi ne znači da on nema grešaka'} ili nešto slično.
+        \item Iz \textit{'serije tragedija i haosa'} izbaciti \textit{'i haosa'} 
+        \item 'Komjuterski' promeniti u srpsku reč 'računarski' ili koristiti neki od oblika navedenih u prvom delu ove sekcije npr. 'kompjuterski (eng. \textit{computer})'.
+        \item \textit{'Radijalna terapija'} prebaciti u \textit{'radijacijska terapija'}, \textit{'radioterapija'} ili, što se u srpskom jeziku najčeće koristi, \textit{'terapija zračenjem'}. Radijalna terapija predstavlja terapiju udarnim talasima koja se najčešće koristi za uklanjanje celulita i poboljšanje cirkulacije. Recezentu nije poznato da se može koristiti za lečenje malignih obolenja.
+        \item Iz \textit{'masivnim predoziranjem'} ostaviti samo \textit{'predoziranjem'}.
+        \item 'Marsov klimatski orbiter' prefomulisati u 'Marsov orbiter za proučavanje klime (eng. \textit{Mars Climate Orbiter})'
+        \item Ubaciti reference za navedene primere npr:
+        
+        \url{https://llis.nasa.gov/llis_lib/pdf/1009464main1_0641-mr.pdf}
+    \end{enumerate}
+
+\odgovor{
+Sve navedene sugestije su prihvaćene i greške su ispravljene.
+}
+    
+    \item Ispravnost programa:
+    \begin{enumerate}
+        \item Promeniti podnaslov iz '\textbf{Ali...}' u nešto što opisuje sadržaj te podsekcije
+        \item Formulisati rečenice bez \textit{međutim}, \textit{tako da ne čudi}, itd..
+    \end{enumerate}
+    
+\odgovor{
+Naslov je preimenovan u ,,\textit{Model problema i verifikacija softvera}‘‘. \\
+Rečenica je preformulisana iz \textit{,,...trajanje razvojnog procesa, tako da ne čudi što se u industriji ove metode koriste samo u retkim slučajevima...‘‘} u \textit{,,...trajanje razvojnog procesa, što dovodi do toga da se u industriji ove metode koriste samo u retkim slučajevima...‘‘}
+}    
+    
+    \item Modeli i metrike pouzdanosti softvera:
+    \begin{enumerate}
+        \item Uz 'Majkrosoft' ubaciti i 'kompanija Majkrosoft (eng. \textit{Microsoft})' ili 'kompanija \textit{Majkrosoft}'
+        \item \textit{'NASA ne sadrži softverski problem'} preformulisati u \textit{'NASA nema softverski problem'}.
+    \end{enumerate}
+
+\odgovor{
+Sve navedene sugestije su prihvaćene i greške su ispravljene.
+}	    
+    
+    \item Budućnost softvera:
+    \begin{enumerate}
+        \item \textit{'Mnogi programerski alati već postoje koji pomažu programerima tako što...'} preformulisati u \textit{'Postoje mnogi programerski alati koji pomažu pri...'}.
+    \end{enumerate}
+
+\odgovor{
+Navedena sugestija je prihvaćena i greška je ispravljena.
+}    
+    
+\end{itemize}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+
+\begin{enumerate}
+\item \textbf{Da li rad dobro odgovara na zadatu temu?}
+
+Rad je odgovorio na zadatu temu, objasnio osnovne pojmove i koncepte formalne verifikacije softvera i metrika pouzdanosti i zainteresovao čitaoce za dalje proučavanje date oblasti.\\
+\item \textbf{Da li je nešto važno propušteno?}
+
+Kako će finalna verzija rada morati da bude najmanje za stranu duža predlog recenzeta je da se doda nešto osnovno o alatima za testiranje softvera npr. \textit{Selenium}.\\
+\item \textbf{Da li ima suštinskih grešaka i propusta?}
+
+U radu nema suštinskih grešaka i propusta.\\
+\item \textbf{Da li je naslov rada dobro izabran?}
+
+Naslov rada je dobro izabran ali je predlog razmisliti o nekom sličnom naslovu u kome nema specijalnih karaktera.\\
+\item \textbf{Da li sažetak sadrži prave podatke o radu?}
+
+Sažetak sadrži prave podatke o radu. Autori su ukratko naveli šta se od rada može očekivati.\\
+\item \textbf{Da li je rad lak-težak za čitanje?}
+
+Prvi deo rada je izuzetno lak za čitanje. Predlog je dodati objašnjenja pored formalnih definicija u četvrtoj sekciji. Rad kao celina je razumljiv i lak za čitanje osobama koje poznaju termine i upućene su u tematiku.\\
+\item \textbf{Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?}
+
+Za razumevanje teksta potrebno je osnovno poznavanje pojmova iz oblasti informatike i matematike.\\
+\item \textbf{Da li je u radu navedena odgovarajuća literatura?}
+
+U radu jeste navedena odgovarajuća literatura. Predlog je, kao što je već navedeno u delu sa sitnim primedbama, ubaciti literaturu za zanimljive primere grešaka u softveru koji su navedeni.\\
+\item \textbf{Da li su u radu reference korektno navedene?}
+
+Reference su korektno navedene.\\
+\item \textbf{Da li je struktura rada adekvatna?}
+
+Struktura rada je adekvatna.\\
+\item \textbf{Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?}
+
+Rad ne sadrži odgovarajući broj strana. Prema uslovima seminarskog, rad mora sadržati najmanje deset strana bez dodatka.\\
+\item \textbf{Da li su slike i tabele funkcionalne i adekvatne?}
+
+Slike i tabele su funkcionalne i adekvatne. Predlog je uvesti eksplicitno referisanje na tabelu. Umesto \textit{'uvodi se sledeća notacija:'} ubaciti \textit{'u tabeli 1 uvedena je notacija'} ili nešto slično tome.\\
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+Malo sam upućen u oblast rada. Poznajem osnovne principe formalne verivikacije softvera dok se sa metrikama navedenim u radu prvi put susrećem.
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+
+\chapter{Recenzent \odgovor{--- ocena: 3} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+U radu se možemo informisati o pouzdanosti napravljenog softvera. Prikazane su tehnike kreiranja i provere softvera tako da softver bude maksimalno pouzdan. Prikazani su primeri velikih nesreća prouzrokovanih greškom u softveru. Primeri nam daju jasnu sliku koliko je to ozbiljna tema i koliko treba na tome raditi. Takođe je spomenuto kako sve to i dalje treba usavršavati.
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Jako je korisno što su navedeni primeri, mnogima zvuči neverovatno da softver može da načini tako ogromnu štetu.\\
+3.2 Verifikacija softvera, trebalo bi dodati nekoliko rečenica o verifikaciji softvera pre podele koja je odmah navedena ispod podnaslova. Prikazano je dosta različitih metoda i modela iz oblasti pouzdanosti softvera, što je jako dobro, jedino što su neka objašnjenja pomalo konfuzna kao recimo Modeli rasta pouzdanosti. Što se tiče budućnosti softvera, lepo je što su se dotakli te teme i prikazali u kom smeru će se napredovati i ići, jedina zamerka bi bila na izraz veštački programeri, možda bi bilo dobro naći neki drugačiji izraz. Trebalo bi dodati još nekoliko slika kako bi se uklonilo sivilo teksta i slikama ulepšao rad.
+\\
+
+\odgovor{
+Pošto je došlo do izmene podnaslova 3.1, autori rada stiču utisak da je u tom poglavlju rečeno dovoljno o verifikaciji i sada se taj deo čini kompletnijim, toliko da bi se u poglavlju 3.2 moglo odmah preći na podelu.\\
+Što se tiče modela rasta pouzdanosti, rečenice su preformulisane tako da jasnije opisuju ideju ovih modela.\\
+U delu o budućnosti softvera, autori rada smatraju da izraz ,,veštački programeri‘‘ dovoljno dobro opisuje šta nas sve očekuje u budućnosti, kada je testiranje pomoću veštačke inteligencije u pitanju.\\
+Dodate su slike u poglavlju 2, za primer 2.1 i 2.2.
+}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+U primeru 2.1 reč "predhodni" nije ispravno napisano, trebalo bi "prethodni".\\
+U primeru 2.2 "kroz gornje slojeva" treba zameniti prepraviti reč slojeva na slojeve.\\
+U primeru 2.4 "Usled greske", treba zameniti s sa š kod reči greske.\\
+U 3.3 i u svim ostalim oblastima u kojima se pojavljuje reč kod ima kvačicu iznad o, trebalo bi zameniti osim ako autor to nije namerno tako ostavio iz nekog razloga.\\
+
+\odgovor{
+Sve navedene sugestije su prihvaćene i greške su ispravljene.
+}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\Odgovara u dobroj meri, pomenuto je kako se softver kreira da bude pouzdan kako se nakon kreiranja proverava da li je stvarno pouzdan, zašto nam je uopšte bitan pouzdan softver, koliko je krucijalan pouzdan softver za svakodnevni život čoveka.
+\item Da li je nešto važno propušteno?\\Nije, pomenuli su sve što je bitno za pouzdan softver.
+\item Da li ima suštinskih grešaka i propusta?\\Nema, rad je lepo opisao suštinu pouzdanosti softvera i prikazao koliko je to bitno i kako uticati na to da softver ispadne maksimalno pouzdan. Kao zamerku bih naveo to što rad dok se čita nije tečan nego se skače sa temu na temu bez pokušaja da se uklope celine.
+\item Da li je naslov rada dobro izabran?\\Naslov rada je jako kreativan, možda donekle nejasan ali uz malo truda može se razumeti koja je poenta rada.
+\item Da li sažetak sadrži prave podatke o radu?\\Da, sažetak lepo opisuje rad i odmah se može prepoznati da li je to tema koja nas zanima ili nije.
+\item Da li je rad lak-težak za čitanje?\\Prvi deo rada je lagan i zanimljiv jer daje informacije iz stvarnog života, kasnije rad postaje formalniji i teži za čitanje.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\ Poželjnije je da čitalac ima predznanje ali i bez njega se može razumeti suština rada u kom su se autori potrudili da pomognu čitaocu jasnim i konciznim uvodnim delovima kod svake oblasti koju su opisivali. Neki delovi rada se oslanjaju na predznanje čitaoca, naročito u dodatku gde je prikazan dokaz korektnosti algoritma quicksort u Isabelle programu.
+\item Da li je u radu navedena odgovarajuća literatura?\\ Literature ima dosta što je dobro jer su onda raznolike informacije uklopljenje na jednom mestu.
+\item Da li su u radu reference korektno navedene?\\Jesu.
+\item Da li je struktura rada adekvatna?\\Rad sadrži uvodni deo, nakon toga malo se naslovi konfuzno menjaju možda bi to moglo bolje da se formatira i lepše uklopi da cela priča samo teče, a ne da postoje skokovi.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\Rad sadrži i slike i teabele ali broj strana sa dodatkom je 10, što je malo trebalo bi više strana da ima rad.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\Tabela prikazuje zanimljivu vezu između matematike i pisanja koda, a slika više prikazuje razvoj softvera nego pouzdanost istog.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate:
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+ c) srednje upućen\\
+% d) malo upućeni
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+Što se tiče pouzdanosti softvera, na nekoliko kurseva na fakultetu sam slušao o tome, novitet za mene je bila oblast Modeli i metrike pouzdanosti softvera, ostale oblasti u radu su mi delimično poznate.
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+
+\odgovor{
+Prvi recezent je predložio da se naslov promeni jer sadrži specijalne karaktere. Autori rada smatraju da postojanje ovakvih specijalnih karaktera ne bi trebalo da ima uticaja na izbor naslova, jer oni jasno objašnjavaju u kom su odnosu implementacija, testiranje i ispravnost softvera.
+}
+\\\\
+\odgovor{
+Budući da je prvi recezent naveo da bi bilo poželjno uvesti pojašnjenja za formalizme, dodat je primer primene Holstedove metrike na jednostavnom C kodu, unutar odeljka 4.1.1. 
+}
+\\\\
+\odgovor{
+Napravljena je izmena koju je prvi recezent napravio za referisanje na tabelu 1, u odeljku 4.1.1.
+}
+\end{document}
