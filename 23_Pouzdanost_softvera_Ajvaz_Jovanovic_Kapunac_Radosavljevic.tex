@@ -91,14 +91,14 @@ U nastavku ćemo se fokusirati na deo sa testiranjem, kao i njegovu vezu sa pouz
 Pouzdanost softvera se definiše kao verovatnoća ispravnog rada sistema tokom određenog vremena, pri određenim uslovima \cite{pham_reliability}.
 Malo neformalnije, pouzdanost je mera slaganja sistema sa svojom specifikacijom.
 
-Da bismo istakli važnost pouzdanosti, počećemo, u poglavlju \ref{sec:primeri}, sa nekim primerima velikih problema koji su nastali zbog nepouzdanog softvera \cite{quinn_ethics}.
+Da bismo istakli važnost pouzdanosti, počećemo, u poglavlju \ref{sec:neispravni_softver}, sa nekim primerima velikih problema koji su nastali zbog nepouzdanog softvera \cite{quinn_ethics}.
 Potom ćemo se, u poglavlju \ref{sec:ispravnost}, baviti ispravnošću programa, kao osnovom pouzdanosti, gde ćemo zagrebati površinu oblasti verifikacije softvera \cite{laski2009software}.
 Nakon toga ćemo, u poglavlju \ref{sec:modeli_metrike}, prikazati neke od modela i metrika koji se koriste u procenjivanju pouzdanosti softvera \cite{pham_reliability}.
 Na kraju ćemo, u poglavlju \ref{sec:buducnost}, razmotriti moguća unapređenja celokupnog procesa razvoja softvera korišćenjem novih dostignuća na polju veštačke inteligencije.\\\\
 
 
 \section{Primeri neispravnog softvera}
-\label{sec:primeri}
+\label{sec:neispravni_softver}
 
 Tokom proteklih decenija, tehnologija je doživela veliki napredak, ali usled grešaka u softveru je prouzrokovala velike materijalne gubitke, kao i ljudske žrtve. Kada započne sa radom i pokaže se ispravnim i odgovarajućim, očekuje se da će softver zadržati to svojstvo. Međutim, serije tragedija i haosa koje su uzrokovane padom softvera pokazuju suprotno.\\
 
@@ -190,10 +190,10 @@ Naziva se i funkcionalno testiranje.\\
 Testovi se biraju na osnovu specifikacije.
 \item testiranje bele kutije\\
 Naziva se i strukturno testiranje.\\
-Testovi se biraju na osnovu interne strukture koda.
+Testovi se biraju na osnovu interne strukture k\^{o}d.
 \end{itemize}
 
-Sa druge strane, statička verifikacija podrazumeva analizu izvornog koda programa, na osnovu koje se dolazi do zaključaka o njegovoj korektnosti.
+Sa druge strane, statička verifikacija podrazumeva analizu izvornog k\^{o}da programa, na osnovu koje se dolazi do zaključaka o njegovoj korektnosti.
 Neke od metoda koje se koriste u statičkoj verifikaciji softvera su:
 \begin{itemize}
 \item simboličko izvršavanje \cite{symbolic_execution}\\
@@ -210,7 +210,7 @@ Formalne metode verifikacije softvera podrazumevaju razvoj softvera direktno iz 
 Uz programski k\^{o}d uporedo se formira i formalan matematički dokaz kojim se obezbeđuje ispravnost, bez potrebe za naknadnim testiranjem.
 U te svrhe se koriste alati za interaktivno dokazivanje teorema, kao što su Isabelle/HOL \cite{isabelle} i Coq \cite{coq}.
 Ovakvo rešenje je najbolje što se tiče pouzdanosti softvera, jer je matematički dokazana ispravnost.
-Međutim, zbog potrebe za stručnjacima koji će to sprovoditi, povećavaju se troškovi, kao i trajanje razvojnog procesa, tako da ne čudi što se u industriji ove metode koriste samo u retkim slučajevima, i to samo za najkritičnije delove koda.\\
+Međutim, zbog potrebe za stručnjacima koji će to sprovoditi, povećavaju se troškovi, kao i trajanje razvojnog procesa, tako da ne čudi što se u industriji ove metode koriste samo u retkim slučajevima, i to samo za najkritičnije delove k\^{o}da.\\
 Neki od primera formalno verifikovanog softvera su:
 \begin{itemize}
 \item CompCert - kompilator za programski jezik C \cite{compcert}
@@ -235,19 +235,19 @@ Selenium je multiplatformsko rešenje u pravom smislu te reči. Podržan je rad 
 
 Prilikom izgradnje softvera, veoma je važno imati na umu da se greška može naći u bilo kojoj fazi njegovog razvoja. Zato je bitno da se pronađe način procene broja potencijalnih grešaka u sistemu.
 
-Statistika pokazuje da se krajem 20. veka na 1000 linija koda pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov k\^{o}d sadrži 0.5 neispravnosti na istom broju linija, dok \emph{NASA} čak ni na 500,000 linija programskog koda ne sadrži niti jedan softverski problem \cite{Statistika_prosek_gresaka}. Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informaciju o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
+Statistika pokazuje da se krajem 20. veka na 1000 linija k\^{o}da pojavi oko 8 grešaka, ne računajući prethodno testiranje sistema. Različiti izvori napominju da je danas taj broj veći, nabraja se 15-50 grešaka na 1000 linija. Majkrosoft tvrdi da njihov k\^{o}d sadrži 0.5 neispravnosti na istom broju linija, dok \emph{NASA} čak ni na 500,000 linija programskog k\^{o}da ne sadrži niti jedan softverski problem \cite{Statistika_prosek_gresaka}. Ovi brojevi su rezulat mnogih spoljašnjih faktora i nisu odgovarajuće merilo propusta i grešaka. Zbog toga su napravljeni razni modeli i metrike koji preciznije daju informaciju o stabilnosti softvera. U nastavku će biti opisana dva tipa takvih modela.\\
 
 
 \subsection{Deterministički modeli}
 \label{sec:deterministicki}
 
-Ovi modeli odlikuju preciznim merama i podacima koji se oslanjanju na same karakteristike programskog koda. Prilikom ocenjivanja, ne uzimaju se u obzir slučajni događaji i greške koje oni prouzrokuju, već su performanse računate prema egzaktnim podacima. Oni uključuju broj različitih operatora, operanada, kao i broj mašinskih instrukcija i grešaka. Fokus je na mehanizmu i načinu rada samog softvera, gde se uvek mogu predvideti očekivana stanja.\\
+Ovi modeli odlikuju preciznim merama i podacima koji se oslanjanju na same karakteristike programskog k\^{o}da. Prilikom ocenjivanja, ne uzimaju se u obzir slučajni događaji i greške koje oni prouzrokuju, već su performanse računate prema egzaktnim podacima. Oni uključuju broj različitih operatora, operanada, kao i broj mašinskih instrukcija i grešaka. Fokus je na mehanizmu i načinu rada samog softvera, gde se uvek mogu predvideti očekivana stanja.\\
 Dva najpoznatija deterministička modela su Holstedova metrika i Mek-Kejbova ciklomatična složenost\footnote{ Moris Hauard Holsted (1977), Tomas Mek-Kejb (1976)}.
 
 \subsubsection{Holstedova metrika}
 \label{subsec:holsted}
 
-Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali i težinu prilikom njegovog testiranja i debagovanja. U obzir ocene implementacije ulazi broj instrukcija i operacija izvornog koda, koji će biti drugačiji za svaki programski jezik ili arhitekturu na kojoj se program izvršava. Uvodi se sledeća notacija:
+Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali i težinu prilikom njegovog testiranja i debagovanja. U obzir ocene implementacije ulazi broj instrukcija i operacija izvornog k\^{o}da, koji će biti drugačiji za svaki programski jezik ili arhitekturu na kojoj se program izvršava. U tabeli \ref{tabela:holsted} se uvodi sledeća notacija:
 \begin{table}[h]
 \centering
  \begin{tabular}{|c|c|c|}
@@ -261,22 +261,51 @@ Ova metrika se smatra jednom od najboljih za procenu kompleksnosti softvera, ali
   \hline $N$ & dužina programa & $ N_1 + N_2 $ \\
   \hline $I$ & broj mašinskih instrukcija & \\
   \hline $V$ & obim programa & $ N \cdot log_2(n_1+n_2) $ \\
-  \hline $D$ & težina razumevanja i debagovanja & $ n_1/2 \cdot N_2 / 2  $ \\
+  \hline $D$ & težina razumevanja i debagovanja & $ n_1/2 \cdot N_2 / n_2  $ \\
   \hline $M$ & vreme utrošeno na implementaciju & $ V \cdot D $ \\
   \hline $T$ & vreme utrošeno na testiranje & $ M / 18 $ \\
   \hline $E$ & broj grešaka i bagova & $ V / 3000 $ \\
   \hline
  \end{tabular}
  \caption{Obeležja u Holstedovoj metrici. Brojevi su dobijeni empirijski \cite{ibm_halstead}}
- \label{tabela:1} 
+ \label{tabela:holsted} 
 \end{table}
+
+Bitno je napomenuti da ne postoji tačno određeno pravilo koje definiše šta spada u operatore, a šta u operande, ali postoje smernice za neke od najpopularnijih jezika. Što se tiče jezika C, pod operatorom se, pored podrazumevanih, smatraju i većina rezervisanih ključnih reči i pozivi funkcija, dok se operandima smatraju identifikatori i konstante.
+
+\begin{primer}
+Primena Holstedove metrike na jednostavnom C k\^{o}du. \cite{holsted_primer}
+\end{primer}
+
+\begin{lstlisting}
+main()
+{
+    int a, b, c, avg;
+    scanf("%d %d %d", &a, &b, &c);
+    avg = (a + b + c) / 3;
+    printf("avg = %d", avg);
+} 
+\end{lstlisting}
+Jedinstveni operatori su: (), \{\}, +, =, /, \&, ',', ;, int, scanf, printf, main \\
+Jedinstveni operandi su: a, b, c, avg, 3, "\%d \%d \%d", "avg = \%d" \\
+Dakle, prateći uvedenu notaciju:
+\begin{itemize}
+\item $n_1$ = 12, $n_2$ = 7, $n$ = 19
+\item $N_1$ = 27, $N_2$ = 15, $N$ = 42
+\item Obim: $V$ = 42 $\cdot$ $log_2 19 \approx 178.4 $
+\item Težina: $D$ = $\frac{12}{2}$ $\cdot$ $\frac{15}{7} \approx 12.85 $
+\item Vreme za implementaciju: $M$ = $ 178.4 \cdot 12.85 \approx 2292.44 $
+\item Vreme za testiranje: $T$ = $ \frac{2292.44}{18} \approx 127.357 $
+\item Broj bagova: $E$ = $ \frac{178.4}{3000} \approx 0.06 $
+\end{itemize}
+
 
 \subsubsection{Mek-Kejbova ciklomatična složenost}
 \label{subsec:mekkejb}
 
 Ova metrika računa složenost dijagrama koji se pravi na osnovu grafa kontrole toka podataka programa. Čvorovi grafa predstavljaju različite komande, a oni su povezani usmerenom granom ako je sledeća naredba prvog čvora ona naredba u drugom čvoru. U slučaju da je graf povezan, ciklomatični broj jednak je broju linearno nezavisnih putanja kroz graf. Jednostavnije rečeno, ako program ne sadrži uslove i grananja, taj broj je 1. Zatim bi se taj broj povećao za 1 svaki put kada se naiđe na neku od ključnih reči: if, while, for, repeat, and, or itd. U naredbi case bi se svaki slučaj posebno računao.\\
 Mek-Kejb je za Fortran okruženje odredio da je gornja granica za ciklomatični broj 10, i program se u tom slučaju može smatrati visokog kvaliteta.\cite{mccabe_fortran}\\\\
-Ovom metrikom se mogu meriti i manje celine izvornog koda, kao što su pojedinačne funkcije, klase, moduli i potprogrami.\\
+Ovom metrikom se mogu meriti i manje celine izvornog k\^{o}da, kao što su pojedinačne funkcije, klase, moduli i potprogrami.\\
 Ciklomatični broj C(G) grafa G se računa po formuli:
 \begin{center}
 C(G) = E - V + 2P,
@@ -298,7 +327,7 @@ Ovi modeli pojavu grešaka i kvarova gledaju kao na verovatnosne događaje. Soft
 
 Ova grupa modela se koristi radi prikazivanja kolika je stopa otkazivanja programa po grešci. Kako se broj preostalih grešaka menja, tako se i stopa neuspeha prilagođava promeni.
 
-Postoji nekoliko varijacija ovih modela, ali se svi oslanjaju na princip da u kodu postoji \textit{N} međusobno nezavisnih grešaka sa jednakom verovatnoćom ispoljavanja. Kada ona nastane, greška se otklanja i nijedna nova greška se ne pojavljuje prilikom uklanjanja.
+Postoji nekoliko varijacija ovih modela, ali se svi oslanjaju na princip da u k\^{o}du postoji \textit{N} međusobno nezavisnih grešaka sa jednakom verovatnoćom ispoljavanja. Kada ona nastane, greška se otklanja i nijedna nova greška se ne pojavljuje prilikom uklanjanja.
 Razlika je u tome što neki podmodeli podrazumevaju povećanje broja grešaka kroz vreme, drugi podrazumevaju smanjenje, a neki ga smatraju konstantnim. Takođe postoje modeli koji sa sigurnošću tvrde da je greška uklonjena, a postoje i oni koji uspešnost otklanjanja procenjuju verovatnoćom \textit{p}.
 
 \subsubsection{Modeli rasta pouzdanosti}
@@ -314,7 +343,7 @@ Postoje dva podmodela: prvi dovodi u korelaciju broj pronađenih i razrešenih g
 Sa poboljšanjem hardvera, mogućnosti softvera postaju sve veće. Pomaci u oblastima veštačke inteligencije i mašinskog učenja omogućavaju mašinama da zamene ljude u nekim delatnostima, što donosi mnoge prednosti kao što su ubrzanje rada, smanjenje troškova i uklanjanje grešaka koje ljudi prave.
 
 \subsection{Veštački programeri - fantastika ili realnost?}
-Postoje mnogi programerski alati koji pomažu programerima tako što vrše automatsko generisanje koda, optimizaciju  ili debagovanje.
+Postoje mnogi programerski alati koji pomažu programerima tako što vrše automatsko generisanje k\^{o}da, optimizaciju  ili debagovanje.
 Sa napretkom veštačke inteligencije, mogućnost automatizacije raznih faza razvoja softvera raste.
 
 Naravno, ideja da će računar sam da napiše komplikovan program je naučna fantastika. Da bismo napravili model koji će da napiše neki program, često nam je potrebno više posla nego da sami napišemo taj program. Međutim, programeri danas retko pišu ceo k\^{o}d od početka do kraja. Najčešće koristimo razne biblioteke i API-je, koji se konstantno menjaju, unapređuju, a i pišu novi. Učenje novih API-ja postaje iscrpljujuće za programera, te nastaje potreba za sistemima koji bi, za određeni ulaz programera, zaključili šta je zadatak i generisali gotov k\^{o}d. Jedan takav sistem je Bayou \cite{bayou}. Njegove mogućnosti su veoma ograničene, ali sa novim poboljšanjima na polju mašinskog učenja i veštačke inteligencije, možemo očekivati sve više takvih sistema u budućnosti.
