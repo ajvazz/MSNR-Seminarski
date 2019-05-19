@@ -1,119 +1,38 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-
 \documentclass{beamer}
 
 \mode<presentation> {
 
-% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
-
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
 \usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-%\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}
-
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
-
-\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{navigation symbols}{}
 }
 
-
-\usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-%\usepackage{bibentry}
-%\usepackage{natbib}
-\usepackage[T2A]{fontenc} % enable Cyrillic fonts
-\usepackage[utf8]{inputenc} % make weird characters work
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{epigraph}
 \usepackage[english,serbian]{babel}
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
+\title[Pouzdanost softvera]{Implementirano $\neq$ testirano $\neq$ ispravno}
 
-\title[Pouzdanost Softvera]{Implementirano $\neq$ testirano $\neq$ ispravno} % The short title appears at the bottom of every slide, the full title is only on the title page
-
-\author{Nenad Ajvaz, Stefan Kapunac,\\ Filip Jovanović, Aleksandra Radosavljević} % Your name
-\institute[MATF] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\author{Nenad Ajvaz, Stefan Kapunac,\\ Filip Jovanović, Aleksandra Radosavljević}
+\institute[MATF]
 {
-Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the title page
+Univerzitet u Beogradu, Matematički fakultet \\
 \medskip
 }
-\date{19.5.2019.} % Date, can be changed to a custom date
+\date{19.5.2019.}
 
 \begin{document}
 
 \begin{frame}
-\titlepage % Print the title page as the first slide
+\titlepage
 \end{frame}
 
 \begin{frame}
-\frametitle{Pregled} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\frametitle{Pregled}
+\tableofcontents
 \end{frame}
-
-%----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%----------------------------------------------------------------------------------------
 
 
 \section{Uvod}
@@ -121,7 +40,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \frametitle{Primena softvera u svakodnevnom životu}
 \textbf{Softver se danas koristi doslovno svuda}
 
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\begin{columns}[c]
 \column{.45\textwidth}
 \begin{itemize}
 \item Administracija
@@ -145,7 +64,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \begin{frame}
 \frametitle{Primeri neispravnog softvera}
 
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\begin{columns}[c]
 
 \column{.45\textwidth}
 \begin{itemize}
@@ -171,7 +90,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \section{Verifikacija}
 \begin{frame}
 \frametitle{Testiranje u razvoju softvera}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\begin{columns}[c]
 \column{.45\textwidth}
 \begin{figure}
 \includegraphics[width=1\linewidth]{rs.png}
@@ -254,10 +173,20 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \begin{frame}
 \frametitle{Holstedova metrika}
 
+\begin{columns}[c]
+
+\column{.45\textwidth}
 \begin{itemize}
 \item Meri se kompleksnost programa
 \item Broj operatora i operanada se dovodi u vezu sa pojavom bagova
 \end{itemize}
+
+\column{.3\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{halstead.png}
+\end{figure}
+
+\end{columns}
 
 \end{frame}
 
@@ -265,8 +194,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \begin{frame}
 \frametitle{Mek-Kejbova ciklomatična složenost}
 
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
+\begin{columns}[c]
 
 \column{.45\textwidth}
 
@@ -301,7 +229,7 @@ G = graf kontrole toka programa
 
 \textbf{Podela}
 \begin{enumerate}
-\item Moteli stope neuspeha
+\item Modeli stope neuspeha
 \begin{itemize}
 \item prikazuju stopu otkazivanja programa po pojavi greške
 \item nekoliko varijacija ovih modela
@@ -321,22 +249,19 @@ G = graf kontrole toka programa
 \begin{frame}
 \frametitle{Budućnost softvera}
 
-Razni alati već danas automatizuju mnoge faze razvoja
+\begin{itemize}
+\item Razni alati već danas automatizuju mnoge faze razvoja
 \begin{itemize}
 \item Generisanje koda
 \item Optimizacija
 \item Debagovanje
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{Veštačka inteligencija}
-
-\begin{itemize}
 \item Sa napretkom veštačke inteligencije i mašinskog učenja, proces razvoja može da se ubrza eksponencijalno
 \item Već se radi na sistemima koji automatski generišu kod (Bayou)
 \item Verujemo da će u budućnosti kod da pišu mašine, a zadatak programera će biti samo da ih kontroliše i usmerava
 \end{itemize}
+
 \end{frame}
 
 \section{Zaključak}
@@ -346,7 +271,7 @@ Razni alati već danas automatizuju mnoge faze razvoja
 \item Greške su neizbežne
 \item Testiranje je važno, ali ne uvek i dovoljno
 \item Formalna verifikacija je ponekad neophodna
-\item Mašine će zavladati svetom
+\item Mašine će zavladati svetom?
 \end{enumerate}
 \end{frame}
 
@@ -362,5 +287,18 @@ Razni alati već danas automatizuju mnoge faze razvoja
 \bibliographystyle{ieeetr}
 \bibliography{seminarski}
 \end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+{\Huge 01001000 01110110 01100001 01101100 01100001 00100001} \\
+{\Huge (Hvala!)} \\ 
+\bigskip
+\bigskip
+{\Huge Pitanja?}
+\end{center}
+\end{frame}
+
+
 
 \end{document} 
