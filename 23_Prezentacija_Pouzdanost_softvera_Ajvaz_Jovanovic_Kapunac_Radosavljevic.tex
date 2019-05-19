@@ -92,13 +92,13 @@
 
 \title[Pouzdanost Softvera]{Implementirano $\neq$ testirano $\neq$ ispravno} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Nenad Ajvaz, Stefan Kapunac, Filip Jovanović, Aleksandra Radosavljević} % Your name
+\author{Nenad Ajvaz, Stefan Kapunac,\\ Filip Jovanović, Aleksandra Radosavljević} % Your name
 \institute[MATF] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the title page
 \medskip
 }
-\date{\today} % Date, can be changed to a custom date
+\date{19.5.2019.} % Date, can be changed to a custom date
 
 \begin{document}
 
@@ -107,7 +107,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \end{frame}
 
 \begin{frame}
-\frametitle{Uvod} % Table of contents slide, comment this block out to remove it
+\frametitle{Pregled} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
@@ -116,7 +116,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 %----------------------------------------------------------------------------------------
 
 
-\section{Primena softvera }
+\section{Uvod}
 \begin{frame} 
 \frametitle{Primena softvera u svakodnevnom životu}
 \textbf{Softver se danas koristi doslovno svuda}
@@ -142,16 +142,30 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \end{columns}
 \end{frame}
 
-
-\section{Primeri neispravnog softvera}
 \begin{frame}
 \frametitle{Primeri neispravnog softvera}
+
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth}
 \begin{itemize}
 \item Therac-25, 1985.
 \item Marsov orbiter za proučavanje klime, 1999.
-\item Letovi u Los Andelesu, 2004.
+\item Letovi u Los Anđelesu, 2004.
 \item Boing 737 MAX, 2019.
 \end{itemize}
+
+\column{.3\textwidth}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{therac.jpg}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{MCO.jpg}
+\end{figure}
+
+\end{columns}
 \end{frame}
 
 \section{Verifikacija}
@@ -220,7 +234,7 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \frametitle{Modeli i metrike pouzdanosti}
 
 \begin{enumerate}
-\item Determinitički modeli
+\item Deterministički modeli
 \begin{itemize}
 \item Holstedova metrika
 \item Mek-Kejbova ciklomatična složenost
@@ -240,30 +254,21 @@ Univerzitet u Beogradu, Matematički Fakultet \\ % Your institution for the titl
 \begin{frame}
 \frametitle{Holstedova metrika}
 
-\begin{table}[h]
-\centering
- \begin{tabular}{|c|c|c|}
-  \hline
-  Obeležje & Opis & Formula \\ [0ex]
-  \hline $n_1$ & broj jedinstvenih operatora & \\ 
-  \hline $n_2$ & broj jedinstvenih operanada & \\ 
-  \hline $n$ & vokabular programa & $ n_1 + n_2 $ \\ 
-  \hline $N_1$ & ukupan broj operatora & $ n_1 \cdot log_2(n_1) $ \\ 
-  \hline $N_2$ & ukupan broj operanada & $ n_2 \cdot log_2(n_2) $ \\ 
-  \hline $N$ & dužina programa & $ N_1 + N_2 $ \\
-  \hline $V$ & obim programa & $ N \cdot log_2(n_1+n_2) $ \\
-  \hline $D$ & težina razumevanja i debagovanja & $ n_1/2 \cdot N_2 / n_2  $ \\
-  \hline $M$ & vreme utrošeno na implementaciju & $ V \cdot D $ \\
-  \hline $T$ & vreme utrošeno na testiranje & $ M / 18 $ \\
-  \hline $E$ & broj grešaka i bagova & $ V / 3000 $ \\
-  \hline
- \end{tabular}
-\end{table}
+\begin{itemize}
+\item Meri se kompleksnost programa
+\item Broj operatora i operanada se dovodi u vezu sa pojavom bagova
+\end{itemize}
+
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Mek-Kejbova ciklomatična složenost}
+
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+
+\column{.45\textwidth}
 
 \begin{center}
 \textbf{C = E - V + 2P} 
@@ -274,14 +279,41 @@ V = broj čvorova grafa G \\
 P = broj povezanih komponenti grafa G \\
 G = graf kontrole toka programa 
 
+\column{.45\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{mccabe.png}
+\end{figure}
+
+\end{columns}
+
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Probabilistički modeli}
 
-Pojava greške se posmatra kao verovatnosni događaj. \\
-Prave se modeli na osnovu ponašanja programa na koje se primenjuju statističke metode.
+\begin{itemize}
+
+\item Greška kao verovatnosni događaj
+\item Razne metode iz oblasti statistike
+
+\end{itemize}
+
+\textbf{Podela}
+\begin{enumerate}
+\item Moteli stope neuspeha
+\begin{itemize}
+\item prikazuju stopu otkazivanja programa po pojavi greške
+\item nekoliko varijacija ovih modela
+\item ...
+\end{itemize}
+\item Modeli rasta pouzdanosti
+\begin{itemize}
+\item predviđaju da li dolazi do poboljšanja pouzdanosti kroz testiranje softvera
+\item dva podmodela
+\item ...
+\end{itemize}
+\end{enumerate}
 
 \end{frame}
 
@@ -303,7 +335,7 @@ Razni alati već danas automatizuju mnoge faze razvoja
 \begin{itemize}
 \item Sa napretkom veštačke inteligencije i mašinskog učenja, proces razvoja može da se ubrza eksponencijalno
 \item Već se radi na sistemima koji automatski generišu kod (Bayou)
-\item Verujemo da će u budućnosti kod da pišu mašine, a zadatak programera će biti samo da kontroliše i usmerava
+\item Verujemo da će u budućnosti kod da pišu mašine, a zadatak programera će biti samo da ih kontroliše i usmerava
 \end{itemize}
 \end{frame}
 
@@ -312,8 +344,8 @@ Razni alati već danas automatizuju mnoge faze razvoja
 \frametitle{Zaključak}
 \begin{enumerate}
 \item Greške su neizbežne
-\item Testiranje je važno, ali ne uvek dovoljno
-\item Formalna verifikacija je ponekad neophodna \cite{laski2009software}
+\item Testiranje je važno, ali ne uvek i dovoljno
+\item Formalna verifikacija je ponekad neophodna
 \item Mašine će zavladati svetom
 \end{enumerate}
 \end{frame}
@@ -321,8 +353,14 @@ Razni alati već danas automatizuju mnoge faze razvoja
 \section{Literatura}
 \begin{frame}
 
+\nocite{quinn_ethics}
+\nocite{laski2009software}
+\nocite{pham_reliability}
+\nocite{Bayou}
+
 \frametitle{Literatura}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{seminarski}
 \end{frame}
+
 \end{document} 
